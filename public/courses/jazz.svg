@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#b45309"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <path d="M470 195c-95 25-145 105-122 192 30 112 190 105 250 56l52 192h115l-78-286c58-68 29-183-78-158-38 9-70 34-92 68z" fill="#fbbf24"/>
+  <circle cx="482" cy="392" r="44" fill="#111827"/>
+  <circle cx="620" cy="294" r="38" fill="#111827"/>
+  <text x="80" y="710" fill="#fff" font-family="Arial, sans-serif" font-size="82" font-weight="700">Jazz Improvisation</text>
+</svg>
