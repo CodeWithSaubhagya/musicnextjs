@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Music School
+
+A modern, animated landing site for an online music school, built with Next.js. It showcases featured courses, instructors, testimonials, and upcoming webinars through a dark, motion-rich UI built on Aceternity-style components.
+
+## Features
+
+- **Hero section** with animated background effects (wavy background / spotlight)
+- **Featured courses** sourced from a local JSON dataset, rendered as 3D / hover-effect cards
+- **Why Choose Us** highlights section
+- **Testimonials** via infinite moving cards
+- **Upcoming webinars** listing
+- **Instructors** showcase with animated tooltips
+- Dedicated **Courses** and **Contact** pages
+- Responsive navbar and footer
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) (App Router) + [React 19](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [simplex-noise](https://github.com/jwagner/simplex-noise.js) for procedural background effects
+- `clsx` + `tailwind-merge` (via `src/utils/cn.ts`) for class composition
+- React Compiler (`babel-plugin-react-compiler`)
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
+# or: npm install && npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command      | Description                  |
+| ------------ | --------------------------- |
+| `pnpm dev`   | Start the development server |
+| `pnpm build` | Build for production         |
+| `pnpm start` | Run the production build     |
+| `pnpm lint`  | Run ESLint                   |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                 # App Router pages
+│   ├── page.tsx         # Home page (composes the sections below)
+│   ├── layout.tsx       # Root layout + Navbar
+│   ├── courses/         # Courses page
+│   └── contact/         # Contact page
+├── components/          # Page sections (HeroSection, FeaturedCourses, etc.)
+│   └── ui/              # Reusable animated UI primitives
+├── data/
+│   └── music_courses.json   # Course catalog data
+└── utils/
+    └── cn.ts            # Tailwind class merge helper
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Course content is defined in `src/data/music_courses.json`; edit that file to change the catalog.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The app deploys cleanly on [Vercel](https://vercel.com/new). See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for other platforms.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Released under the [MIT License](LICENSE).
